@@ -9,23 +9,23 @@ RSpec.describe SlackRubyDocBot::Bot do
 
   describe 'Commands' do
     specify 'doc class' do
-      expect(message: 'doc FalseClass', channel: 'channel')
+      expect(message: 'doc Array', channel: 'channel')
         .to respond_with_slack_message(
-          /# FalseClass < Object\n\(from ruby core\)/
+          /# Array < Object\n/
         )
     end
 
     specify 'class with method' do
-      expect(message: 'FalseClass#to_s', channel: 'channel')
+      expect(message: 'Array#first', channel: 'channel')
         .to respond_with_slack_message(
-          /# FalseClass#to_s\n\(from ruby core\)/
+          /# Array#first\n\(from ruby/
         )
     end
 
     specify 'doc class with method' do
-      expect(message: 'doc FalseClass#to_s', channel: 'channel')
+      expect(message: 'doc Array#first', channel: 'channel')
         .to respond_with_slack_message(
-          /# FalseClass#to_s\n\(from ruby core\)/
+          /# Array#first\n\(from ruby/
         )
     end
   end

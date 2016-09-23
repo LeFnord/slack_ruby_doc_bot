@@ -17,14 +17,14 @@ module SlackRubyDocBot
       end
     end
 
-    match(/^doc (?<klass>[[:upper:]]\w+)$/) do |client, data, match|
-      documentation = SlackRubyDocBot::Concerns::Doc.call!(klass: match[:klass])
+    match(/^(doc\s*)*(?<klass>[[:upper:]]\w+)#(?<method>.+?)$/) do |client, data, match|
+      documentation = SlackRubyDocBot::Concerns::Doc.call!(klass: match[:klass], method: match[:method])
 
       client.say(channel: data.channel, text: documentation, mrkdwn: true)
     end
 
-    match(/^(doc\s*)*(?<klass>\w+)#(?<method>\w+)/) do |client, data, match|
-      documentation = SlackRubyDocBot::Concerns::Doc.call!(klass: match[:klass], method: match[:method])
+    match(/^doc (?<klass>[[:upper:]]\w+)$/) do |client, data, match|
+      documentation = SlackRubyDocBot::Concerns::Doc.call!(klass: match[:klass])
 
       client.say(channel: data.channel, text: documentation, mrkdwn: true)
     end
