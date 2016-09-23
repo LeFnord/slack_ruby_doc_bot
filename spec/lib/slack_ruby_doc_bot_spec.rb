@@ -15,6 +15,13 @@ RSpec.describe SlackRubyDocBot::Bot do
         )
     end
 
+    specify 'doc module::class' do
+      expect(message: 'doc JSON::Ext', channel: 'channel')
+        .to respond_with_slack_message(
+          /# JSON::Ext\n\(from ruby/
+        )
+    end
+
     specify 'class with method' do
       expect(message: 'Array#first', channel: 'channel')
         .to respond_with_slack_message(
@@ -26,6 +33,13 @@ RSpec.describe SlackRubyDocBot::Bot do
       expect(message: 'doc Array#first', channel: 'channel')
         .to respond_with_slack_message(
           /# Array#first\n\(from ruby/
+        )
+    end
+
+    specify 'doc module::class with method' do
+      expect(message: 'doc Net::HTTP#active?', channel: 'channel')
+        .to respond_with_slack_message(
+          /# Net::HTTP#active\?\n\(from ruby/
         )
     end
   end

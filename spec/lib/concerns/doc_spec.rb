@@ -18,6 +18,13 @@ RSpec.describe SlackRubyDocBot::Concerns::Doc do
       specify { expect(object).to start_with "# #{klass} < Object\n" }
     end
 
+    describe 'invalid nested klass given' do
+      let(:klass) { 'JSON::Ext' }
+      let(:object) { subject.call!(klass: klass) }
+
+      specify { expect(object).to start_with "# #{klass}" }
+    end
+
     describe 'invalid klass given' do
       let(:klass) { 'WrongClass' }
       let(:object) { subject.call!(klass: klass) }

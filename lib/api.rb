@@ -6,6 +6,7 @@ module SlackRubyDocBot
     prefix :api
     format :json
 
+    # get some information about the bot via the API
     get do
       {
         bot:

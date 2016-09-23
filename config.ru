@@ -1,6 +1,10 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
+# loads env variables -> Slack API token
+require 'dotenv'
+Dotenv.load
+
 require 'slack_ruby_doc_bot'
 require 'api'
 

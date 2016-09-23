@@ -12,15 +12,27 @@ $ cd slack_ruby_doc_bot
 $ ./script/setup
 ```
 
+## Test
+
+```
+$ ./script/test
+```
+
 ## Setup Slack API Token
 
 Create a new Bot Integration under [services/new/bot](http://slack.com/services/new/bot)  
 and note it on the next screen
 
+Create `.env` file in the root of the project and store your token there
+
+```
+SLACK_API_TOKEN=<your token>
+```
+
 ## Run
 
 ```
-SLACK_API_TOKEN=<your token> ./script/server
+$ ./script/server
 ```
 
 ## Use in Slack

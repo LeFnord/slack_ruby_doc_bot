@@ -4,15 +4,4 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-if [ "$SLACK_API_TOKEN" = "" ]; then
-  echo ""
-  echo "SLACK_API_TOKEN not set"
-  echo ""
-  exit 1
-else
-  echo ""
-  echo "SLACK_API_TOKEN: $SLACK_API_TOKEN"
-  echo ""
-fi
-
 foreman start -p 4567

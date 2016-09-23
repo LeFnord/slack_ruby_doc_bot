@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'slack-ruby-bot'
-gem 'grape'
-gem 'dotenv'
 gem 'celluloid-io'
+gem 'grape'
 gem 'thin'
+gem 'dotenv'
 gem 'rdoc'
 
 group :development, :test do
