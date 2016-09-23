@@ -3,4 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 set -vx
 
+# ensure `foreman` is available
+gem install foreman
+
 bundle install
