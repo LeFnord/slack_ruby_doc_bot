@@ -1,4 +1,4 @@
-<!-- [ ![Codeship Status for LeFnord/slack_ruby_doc_bot](https://codeship.com/projects/f1e55a50-6357-0134-29f2-0648b7df1f30/status?branch=master)](https://codeship.com/projects/175349) -->
+[ ![Codeship Status for LeFnord/slack_ruby_doc_bot](https://codeship.com/projects/f1e55a50-6357-0134-29f2-0648b7df1f30/status?branch=master)](https://codeship.com/projects/175349)
 
 # Slack Ruby Doc Bot
 
@@ -20,7 +20,7 @@ and note it on the next screen
 ## Run
 
 ```
-SLACK_API_TOKEN=<you token> ./script/server
+SLACK_API_TOKEN=<your token> ./script/server
 ```
 
 ## Use in Slack
@@ -34,7 +34,7 @@ type
 ```
 [bot name] help
 ```
-for available commands
+for available commands and usage instructions
 
 ## Contributing
 
